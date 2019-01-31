@@ -86,7 +86,7 @@ while True:
 	if arb != 0:
 		arb_pt += 1
 
-	if data[-1]['Ask_Coinbase'] != ask_coinbase or data[-1]['Bid_Coinbase'] != bid_coinbase or data[-1]['Ask_CEX'] != ask_cex or data[-1]['Bid_CEX'] != bid_cex:
+	if len(data) == 0 or data[-1]['Ask_Coinbase'] != ask_coinbase or data[-1]['Bid_Coinbase'] != bid_coinbase or data[-1]['Ask_CEX'] != ask_cex or data[-1]['Bid_CEX'] != bid_cex:
 		data.append({'Ask_Coinbase':ask_coinbase,'Bid_Coinbase':bid_coinbase,'Ask_CEX':ask_cex,'Bid_CEX':bid_cex,'Arb':arb,'Time':current_time})
 	
 	print ('Total arbitrage points:\t',arb_pt)
